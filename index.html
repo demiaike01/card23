@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>完整视频</title>
+<!-- Twitter Card 基础配置 -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="点击此处观看视频" name="twitter:title"/>
+<meta content="点击立即观看完整视频，精彩不容错过！" name="twitter:description"/>
+<meta content="https://demiaike01.github.io/card22/assets/1.png" name="twitter:image"/>
+<!-- Open Graph（推荐一起写） -->
+<meta content="https://demiaike01.github.io/card21/assets/1.png" property="og:image"/>
+<meta content="页面标题" property="og:title"/>
+<meta content="页面描述" property="og:description"/>
+<meta content="https://demiaike01.github.io/card21/" property="og:url"/>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f2f2f2;
+      color: #222;
+      background-image: url('assets/background.jpg'); /* 将 'xxx' 替换为实际的图片链接 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .video-container {
+      width: 100%;
+      background-color: #000;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+
+    .content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      background: #0077ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #005ecc;
+    }
+
+    /* 小屏适配 */
+    @media (max-width: 600px) {
+      .content {
+        padding: 16px;
+        border-radius: 0;
+      }
+
+      .content h2 {
+        font-size: 1.2rem;
+      }
+
+      .content p {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+<script>
+    fetch('config.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('dynamic-title').textContent = data.title;
+      })
+      .catch(error => {
+        console.error('读取 config.json 失败：', error);
+      });
+    // 禁止 F12 和常见开发者工具快捷键
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key.toLowerCase() === 'u')
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+
+    // 禁止右键菜单
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  </script>
+</head>
+<body>
+<!-- 视频区域 -->
+<div class="video-container">
+<video autoplay="" controls="" loop="" muted="" playsinline="">
+<source src="assets/1.mp4" type="video/mp4"/>
+      您的浏览器不支持 HTML5 视频。
+    </video>
+</div>
+<!-- 内容区域 -->
+<div class="promo-content" style="
+    max-width: 550px; 
+    margin: 40px auto; 
+    padding: 20px; 
+    text-align: center; 
+    font-family: 'Arial', sans-serif; 
+    color: #333; 
+    background-color: #fff; 
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+<h2 style="font-size: 22px; color: #222;">🎬 完整版关键词：</h2>
+<h1 id="dynamic-title" style="font-size: 28px; margin: 5px 0; color: #e53935;"></h1>
+<p style="font-size: 18px; line-height: 1.8; margin-top: 20px;">
+      在 Telegram 里用 <strong>极搜 JISOU</strong> 一搜就有！<br/>
+      从此吃瓜、找番、私密资源、破解软件再也不求人 ✅<br/>
+<span style="color: #000000;">资源太多，不如直接搜关键词</span>
+</p>
+<p>👇 👇 👇 👇 👇 👇 👇 👇</p>
+<a href="https://t.me/jisou99001" style="display: inline-block; margin-top: 1; background: #0088cc; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: bold;" target="_blank">
+      🔍 打开 JISOU，搜索关键词
+    </a>
+<p style="margin-top: 12px; font-size: 14px; color: #000000;">  建议复制关键词粘贴搜索，快速找到你想要的</p>
+<p style="color: red; font-weight: bold;">
+      ⚠️ 如果视频无法播放，请点击右上角用浏览器打开！
+    </p>
+</div>
+</body>
+</html>
